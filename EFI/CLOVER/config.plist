@@ -66,7 +66,7 @@
 				<key>FixDarwin7</key>
 				<false/>
 				<key>FixDisplay</key>
-				<true/>
+				<false/>
 				<key>FixFirewire</key>
 				<false/>
 				<key>FixHDA</key>
@@ -94,11 +94,11 @@
 				<key>FixSBUS</key>
 				<false/>
 				<key>FixShutdown</key>
-				<true/>
+				<false/>
 				<key>FixTMR</key>
 				<false/>
 				<key>FixUSB</key>
-				<true/>
+				<false/>
 				<key>FixWAK</key>
 				<false/>
 			</dict>
@@ -116,34 +116,6 @@
 					<key>Replace</key>
 					<data>
 					oAqRCv8L//8=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change GFX0 to IGPU</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					R0ZYMA==
-					</data>
-					<key>Replace</key>
-					<data>
-					SUdQVQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change HECI to IMEI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					SEVDSQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					SU1FSQ==
 					</data>
 				</dict>
 			</array>
@@ -200,7 +172,7 @@
 		<key>C6</key>
 		<false/>
 		<key>HWPEnable</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -413,7 +385,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C07829902J91M</string>
+		<string>C07815100J9CB</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -443,7 +415,7 @@
 		<key>ProductName</key>
 		<string>Macmini8,1</string>
 		<key>SerialNumber</key>
-		<string>C07X3VZ1JYVX</string>
+		<string>C07WKENNJYVX</string>
 		<key>SmUUID</key>
 		<string>60338F9F-2B84-48FB-B75D-59CDD25B05E5</string>
 		<key>Version</key>
