@@ -1,78 +1,38 @@
-# Update 2019/04/13
+# Update 2019/04/27
 
+### PND
 
------------------------------------------------------------
-## PND
------------------------------------------------------------
+- PLAN
+    - [ ] 关机无法WOL,有时候休眠后也无法WOL
+    - [ ] 将现有的遇到的坑的关键点记录下来。分享一下
 
-[]关机无法WOL
+- DONE
+    - [x]  cpu变频OK（CLOVER里CPU页面选中HWPEnable）, C2,C4,C6等不能选。。性能会严重下降
+    - [x]  dummy144.kext无用，可以删掉
+    - [x]  声卡OK 注入id为5
+    - [x] 测试音频直接从主板驳接是否有声。(音质如何,netease的设置音质配置一下先)
+    - [x] 4K 硬解码 开启，需要将核显驱动，最初无法识别intel核显，与clover有关（直接用的微星迫击炮的b360的clover，导致集显无法驱动），删掉相关的的显卡的驱动注入代码即可在mac识别核显
+    - [x] 无线网卡/蓝牙， airdrop handoff
+    - [x] Clover设置启动倒计时3秒进mac 手动干涉进Windows
+    - [x] 制作一个1T移动硬盘的CCC克隆镜像，带efi，recovery，克隆，时间机器的移动盘。
+    - [x] Mojave里虚拟化一个Windows，一些特殊的软件可以 临时开了用，不用切双系统
 
-[]有时候休眠后也无法WOL
+### 其他说明
 
-[]将现有的遇到的坑的关键点记录下来。。。。 
+- 请大家升级最新的Clover Configurator重新生成序列号，否则大家都用一个序列号会导致icloud出问题
 
-[]MAC 热键休眠...
+- Clover Configurator 的挂载EFI分区功能无法使用，点了没反映，，，搞得我还装一个专门的傻逼工具EFI Mounter v3的什么装载工具。。。其实是因为我当时下载的 Clover Configurator 版本太低 4.x，，，升级到5.x 问题fix。。。顺滑无比。
 
------------------------------------------------------------
-[x]固态盘的trim问题。（check2台机）
+- 安装的时候卡无法显示，B360的HDMI无解（事实上，很多HDMI都不太好，建议买带DP的主板，或直接上蓝宝石的显卡），后来买了块蓝宝石的rx570 直接解决问题
 
-[x]cpu变频问题,我的是8700k+z370 变频没问题，也是用的typePlugin 最低是0.8Ghz。
-
-[x]鼠标有点飘，，，关闭鼠标加速，，，看看是怎么回事？
-
-[x]//评估office for mac、 wps for mac、office in VM 的方案。。。(WPS for mac)
-
-[x]dummy144.kext的作用?
-
-[x]Mojave是否需要刻意洗白？(填三码) 登录icloud/激活iMessage,Facetime?
-
-[x]测试音频直接从主板驳接是否有声。(音质如何,netease的设置音质配置一下先)
-
-[x]4K 硬解码 如何开启
-
-[x]无线网卡/蓝牙， airdrop handoff
-
-[x]Clover设置启动倒计时3秒进mac 手动干涉进Windows
-
-[x]安装配置开发环境(itrem2、xcode等)
-
-[x]OpenWRT是否可配置第二个时间胶囊给不同的mac使用? 还是共用一个? 
-
-[]//开启B360的HDMI屏显？
-
-[x]精读tonymacx86的教程
-
-[x]Check 家里两条线， 一条DP2DP， 另一条 MiniDP2MiniDP， 是否都有?
-
-[x]macbook 切换英文版，浅色模式， 否则跑Unibeast会出问题
-
-[x]注册tonymacx86
-
-[x]Windows 系统备份 迁移到 ssd 120G，留NVMe的250G给mac系统
-
-[x]蓝宝石 rx 570
-
-[x]//无线网卡和蓝牙套件, 暂时先不买住,airdrop /handoff  暂无吸引力
-
-[x]//89.99 那台机器的 amd 显卡： AMD Radeon(TM) R5 340X (mojave 不可用，新dell拆机)
-
-[x]//尝试在intel B360的集显（HDMI）上安装Mojave (快进入安装界面黑屏无屏显，估计是不支持hdmi)
-
-[x]移植改键的软件过来。
-
-[x]制作一个1T盘的CCC克隆镜像，带efi，recovery，克隆，时间机器的移动盘。
-
-[x]里面虚拟化一个Windows，一些特殊的软件可以 临时开了用，不用切双系统
-
------------------------------------------------------------
+- 无法开启很h264/h265的4K硬解，clover configurator 里面Graphics的Inject Intel 勾选， ig-platform-id选择UHD630第三个ID“0x3E9B0007”，有个教程里建议用第一个ID“0x3E910003”说快一些，测试过用第一个id会导致h265可以硬解，h264无法硬解，，， 用第三个id"0x3E9B0007"可完美硬解 （再次测试，确实如此）
 
 ## Changelog
 
-### 2019/04/13
+### 2019/04/27
 
     初次从MSI的迫击炮的EFI Fork过来的，改动并修补一些。 GPU为蓝宝石矿卡rx570(免驱)
     华擎的这块板为B360的并且没有DP口，hack比较麻烦，所以直接买了块矿卡直接驱动
-
 
 
 ### 2019/04/13
