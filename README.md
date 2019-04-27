@@ -17,6 +17,7 @@
     - [x] Mojave里虚拟化一个Windows，一些特殊的软件可以 临时开了用，不用切双系统
 
 ### 其他说明
+- 感谢sleele前面的探索，我才得以吃上黑苹果，这是他的blog https://sleele.com/2018/12/01/hackintosh/  他的github https://github.com/SuperNG6/MSI-B360-10.14.4-EFI
 
 - 请大家升级最新的Clover Configurator重新生成序列号，否则大家都用一个序列号会导致icloud出问题
 
