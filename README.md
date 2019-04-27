@@ -22,9 +22,9 @@
 
 - Clover Configurator 的挂载EFI分区功能无法使用，点了没反映，，，搞得我还装一个专门的傻逼工具EFI Mounter v3的什么装载工具。。。其实是因为我当时下载的 Clover Configurator 版本太低 4.x，，，升级到5.x 问题fix。。。顺滑无比。
 
-- 无法开启很h264/h265的4K硬解，clover configurator 里面Graphics的Inject Intel 勾选， ig-platform-id选择UHD630第三个ID“0x3E9B0007”，有个教程里建议用第一个ID“0x3E910003”说快一些，测试过用第一个id会导致h265可以硬解，h264无法硬解，，， 用第三个id"0x3E9B0007"可完美硬解 （再次测试，确实如此）
+- 如何开启h264/h265的4K硬解？ clover configurator 里面Graphics的Inject Intel要勾选， ig-platform-id选择UHD630第三个ID“0x3E9B0007”，有个教程里建议用第一个ID“0x3E910003”说快一些，测试过用第一个id会导致h265可以硬解，h264无法硬解，，， 用第三个id"0x3E9B0007"可完美硬解(再次测试，确实如此)
 
-- 没有独显的时候，安装卡到安装前黑屏，B360的HDMI无解（事实上，很多HDMI都不太好，建议买带DP的主板，或直接上蓝宝石的显卡），后来买了块蓝宝石的rx570 直接解决问题
+- 没有独显的时候，无法加载installer，表现为黑屏，B360的HDMI无解（事实上，很多HDMI都不太好，建议买带DP的主板，或直接上蓝宝石的显卡），后来买了块蓝宝石的rx570 直接解决问题
 
 - 无法识别intel核显，与clover有关（直接用的微星迫击炮的b360的clover，导致集显无法驱动） ，删掉相关的的显卡的驱动注入代码即可在mac识别核显，
 
