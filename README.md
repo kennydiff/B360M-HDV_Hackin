@@ -8,7 +8,6 @@
 
 - DONE
     - [x]  cpu变频OK（CLOVER里CPU页面选中HWPEnable）, C2,C4,C6等不能选。。性能会严重下降
-    - [x]  dummy144.kext无用，可以删掉
     - [x]  声卡OK 注入id为5
     - [x] 测试音频直接从主板驳接是否有声。(音质如何,netease的设置音质配置一下先)
     - [x] 4K 硬解码 开启，需要将核显驱动，最初无法识别intel核显，与clover有关（直接用的微星迫击炮的b360的clover，导致集显无法驱动），删掉相关的的显卡的驱动注入代码即可在mac识别核显
@@ -26,6 +25,15 @@
 - 安装的时候卡无法显示，B360的HDMI无解（事实上，很多HDMI都不太好，建议买带DP的主板，或直接上蓝宝石的显卡），后来买了块蓝宝石的rx570 直接解决问题
 
 - 无法开启很h264/h265的4K硬解，clover configurator 里面Graphics的Inject Intel 勾选， ig-platform-id选择UHD630第三个ID“0x3E9B0007”，有个教程里建议用第一个ID“0x3E910003”说快一些，测试过用第一个id会导致h265可以硬解，h264无法硬解，，， 用第三个id"0x3E9B0007"可完美硬解 （再次测试，确实如此）
+
+- 没有独显的时候，安装卡到安装前黑屏，B360的HDMI无解（事实上，很多HDMI都不太好，建议买带DP的主板，或直接上蓝宝石的显卡），后来买了块蓝宝石的rx570 直接解决问题
+
+- 无法识别intel核显，与clover有关（直接用的微星迫击炮的b360的clover，导致集显无法驱动） ，删掉相关的的显卡的驱动注入代码即可在mac识别核显，
+
+- dummy144.kext 这个与是否可以开启核显无关。。。不是必须的，测试后可以删除这个驱动
+
+- Devices的 IntelGFX的 Fake ID 看看是否有必要选择正确？。。。 0x3E928086 （可以不填，不是必须的）
+
 
 ## Changelog
 
@@ -103,7 +111,6 @@ MSI B360 BIOS download link https://cn.msi.com/Motherboard/support/B360M-MORTAR
 ![示例图片加载失败](https://raw.githubusercontent.com/SuperNG6/pic/master/Hackintosh%20images/BIOS.png)
 
 # Detail:
- [My Blog: sleele.com/2018/12/01/hackintosh/ ](http://sleele.com/2018/12/01/hackintosh/ "Blog")
 
 ![示例图片加载失败](https://raw.githubusercontent.com/SuperNG6/pic/master/Hackintosh%20images/image-5.png)
 ![示例图片加载失败](https://raw.githubusercontent.com/SuperNG6/pic/master/Hackintosh%20images/image-2.png)
@@ -114,21 +121,3 @@ MSI B360 BIOS download link https://cn.msi.com/Motherboard/support/B360M-MORTAR
 ![示例图片加载失败](https://raw.githubusercontent.com/SuperNG6/pic/master/Hackintosh%20images/image-4.png)
 ![示例图片加载失败](https://raw.githubusercontent.com/SuperNG6/pic/master/Hackintosh%20images/image-7.png)
 ![示例图片加载失败](https://raw.githubusercontent.com/SuperNG6/pic/master/Hackintosh%20images/image-1.png)
-
-
-
-# Kenny's Hackintosh 坑录
-
-- Clover Configurator 的挂载EFI分区功能无法使用，点了没反映，，，搞得我还装一个专门的傻逼工具EFI Mounter v3的什么装载工具。。。其实是因为我当时下载的 Clover Configurator 版本太低 4.x，，，升级到5.x 问题fix。。。顺滑无比。
-
-- 安装的时候卡无法显示，B360的HDMI无解（事实上，很多HDMI都不太好，建议买带DP的主板，或直接上蓝宝石的显卡），后来买了块蓝宝石的rx570 直接解决问题
-
-- 无法识别intel核显，与clover有关（直接用的微星迫击炮的b360的clover，导致集显无法驱动） ，删掉相关的的显卡的驱动注入代码即可在mac识别核显，
-
-- 无法开启很h264/h265的4K硬解，clover configurator 里面Graphics的Inject Intel 勾选， ig-platform-id选择UHD630第三个ID“0x3E9B0007”，有个教程里建议用第一个ID“0x3E910003”说快一些，测试过用第一个id会导致h265可以硬解，h264无法硬解，，， 用第三个id"0x3E9B0007"可完美硬解 （再次测试，确实如此）
-
-- dummy144.kext 这个与是否可以开启核显无关。。。不是必须的，测试后可以删除这个驱动
-
-- Devices的 IntelGFX的 Fake ID 看看是否有必要选择正确？。。。 0x3E928086 （可以不填，不是必须的）
-
-- 声卡 驱动
