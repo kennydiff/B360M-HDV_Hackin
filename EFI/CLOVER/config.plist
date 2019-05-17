@@ -106,7 +106,7 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>Fix RTC_STA bug</string>
+					<string>Fix RTC _STA bug</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -118,11 +118,31 @@
 					oAqRCv8L//8=
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change HECI to IMEI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SEVDSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					SU1FSQ==
+					</data>
+				</dict>
 			</array>
 			<key>ReuseFFFF</key>
 			<false/>
+			<key>SlpSmiAtWake</key>
+			<false/>
+			<key>SuspendOverride</key>
+			<false/>
 		</dict>
 		<key>FixHeaders</key>
+		<false/>
+		<key>HaltEnabler</key>
 		<false/>
 		<key>SSDT</key>
 		<dict>
@@ -149,33 +169,42 @@
 		<string>Mojave</string>
 		<key>Legacy</key>
 		<string>PBR</string>
-		<key>NoEarlyProgress</key>
+		<key>NeverHibernate</key>
 		<false/>
+		<key>NoEarlyProgress</key>
+		<true/>
 		<key>Secure</key>
 		<false/>
+		<key>SkipHibernateTimeout</key>
+		<false/>
 		<key>Timeout</key>
-		<integer>5</integer>
+		<integer>2</integer>
 		<key>XMPDetection</key>
 		<false/>
 	</dict>
 	<key>BootGraphics</key>
 	<dict>
 		<key>UIScale</key>
-		<integer>2</integer>
+		<integer>1</integer>
 	</dict>
 	<key>CPU</key>
 	<dict>
-		<key>C2</key>
-		<false/>
-		<key>C4</key>
-		<false/>
-		<key>C6</key>
-		<false/>
 		<key>HWPEnable</key>
 		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
+		<key>Audio</key>
+		<dict>
+			<key>AFGLowPowerState</key>
+			<false/>
+			<key>Inject</key>
+			<string>No</string>
+			<key>ResetHDA</key>
+			<false/>
+		</dict>
+		<key>LANInjection</key>
+		<false/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -187,6 +216,8 @@
 			<key>Inject</key>
 			<true/>
 		</dict>
+		<key>UseIntelHDMI</key>
+		<false/>
 	</dict>
 	<key>DisableDrivers</key>
 	<array>
@@ -197,6 +228,7 @@
 		<key>Hide</key>
 		<array>
 			<string>BOOTX64.EFI</string>
+			<string>Recovery HD</string>
 			<string>Preboot</string>
 			<string>ssd_C</string>
 			<string>ssd_D</string>
@@ -218,7 +250,7 @@
 			<key>Legacy</key>
 			<false/>
 			<key>Linux</key>
-			<false/>
+			<true/>
 			<key>Tool</key>
 			<true/>
 		</dict>
@@ -238,8 +270,6 @@
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>PatchVBios</key>
-		<false/>
 		<key>ig-platform-id</key>
 		<string>0x3E9B0007</string>
 	</dict>
@@ -261,38 +291,22 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>KBL-5912000-Port_0x6_HDMI</string>
+				<string>USB port limit patch</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				AQUJAAAEAACHAQAA
+				g/sPDw==
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
+				<key>MatchOS</key>
+				<string>10.14.x</string>
 				<key>Name</key>
-				<string>AppleIntelKBLGraphicsFramebuffer</string>
+				<string>com.apple.iokit.IOUSBHostFamily</string>
 				<key>Replace</key>
 				<data>
-				AgISAACAAACHAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>KBL-5912000-Port_0x5_HDMI</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AwYKAAAEAACHAQAA
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>AppleIntelKBLGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AQESAAAIAACHAQAA
+				g/s/Dw==
 				</data>
 			</dict>
 			<dict>
@@ -384,8 +398,6 @@
 		<string>Mac-7BA5B2DFE22DDD8C</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
-		<key>BoardSerialNumber</key>
-		<string>C07815100J9CB</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -414,19 +426,13 @@
 		<string>0x02</string>
 		<key>ProductName</key>
 		<string>Macmini8,1</string>
-		<key>SerialNumber</key>
-		<string>C07WKENNJYVX</string>
-		<key>SmUUID</key>
-		<string>60338F9F-2B84-48FB-B75D-59CDD25B05E5</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
-		<key>CustomUUID</key>
-		<string>CA73E7AB-1632-5D1D-9C45-6007F684B5AD</string>
 		<key>InjectKexts</key>
-		<string>Detect</string>
+		<string>Yes</string>
 		<key>InjectSystemID</key>
 		<true/>
 	</dict>
