@@ -34,7 +34,7 @@
 
 - log show | grep -i "Wake reason" 查看休眠出问题的日志，很有帮助，解决了一个困扰我一个星期的休眠问题。
 
-- 关机，一只无法切掉键盘的电，让我抓狂很久，后来发现，在BIOS里有个设置，设置s5或者s4~s5 deep sleep的省电模式即可)
+- 关机无法切掉键盘的电，这个issue让我抓狂很久，后来发现在BIOS里有个设置，设置s5或者s4~s5 deep sleep的省电模式即可)
 
 - 休眠后立即唤醒，，， 问题在usb的SSDT-UIAC.aml文件，需要被HakinTool识别为：HS10(驳接的博通的wifi/蓝牙卡) 要设置为Internal（内部的常驻设备），而不是USB2
     参考SSDT-UIAC.dsl代码段
